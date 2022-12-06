@@ -3,6 +3,6 @@ delta-spark==1.1.0
 boto==2.49.0
 pandas==1.3.5
 pyarrow==7.0.0
-awswrangler==2.18.0
-fsspec==2022.11.0
+awswrangler
+fsspec
 s3fs
