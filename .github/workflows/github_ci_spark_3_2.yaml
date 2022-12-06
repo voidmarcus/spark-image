@@ -28,8 +28,8 @@ jobs:
         IMAGE_TAG: v3.2.3-hadoop3
       run: |
         cd $IMAGE_PATH
-        ./bin/docker-image-tool.sh -t $IMAGE_TAG build
-        ./bin/docker-image-tool.sh -r $REGISTRY/$REPOSITORY -t $IMAGE_TAG push
+        ./bin/docker-image-tool.sh -r $REGISTRY -t $IMAGE_TAG build
+        ./bin/docker-image-tool.sh -r $REGISTRY -t $IMAGE_TAG push
         
 env:
   IMAGE_PATH : "spark-3.2.3-bin-hadoop3.2"
