@@ -28,7 +28,7 @@ jobs:
         IMAGE_TAG: v3.2.3-hadoop3
       run: |
         cd $IMAGE_PATH
-        ./bin/docker-image-tool.sh -r $REGISTRY -t $IMAGE_TAG build
+        ./bin/docker-image-tool.sh -r $REGISTRY -t $IMAGE_TAG -p ./kubernetes/dockerfiles/spark/bindings/python/Dockerfile build
         ./bin/docker-image-tool.sh -r $REGISTRY -t $IMAGE_TAG push
         
 env:
