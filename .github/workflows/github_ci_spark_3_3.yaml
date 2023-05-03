@@ -1,4 +1,4 @@
-name: Build and Push Spark Image
+name: Build and Push Spark 3.3 Image
 
 on:
   workflow_dispatch:

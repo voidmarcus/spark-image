@@ -1,4 +1,4 @@
-name: Pyspark Delta AWS Image
+name: Pyspark 3.3 Delta AWS Image
 
 on:
   workflow_dispatch:

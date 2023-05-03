@@ -1,4 +1,4 @@
-name: Build and Push PySpark Image
+name: Build and Push PySpark 3.3 Image
 
 on:
   workflow_dispatch:
