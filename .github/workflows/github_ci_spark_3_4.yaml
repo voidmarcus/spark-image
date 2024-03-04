@@ -19,14 +19,13 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
         
     - name: Build, tag, and push image to Docker Hub
-      uses: docker/build-push-action@v5
       env:
         REGISTRY: ${{ secrets.DOCKERHUB_USERNAME }}
         REPOSITORY: spark
         IMAGE_TAG: v3.4.2-hadoop3
       run: |
         cd $IMAGE_PATH
-        ./bin/docker-image-tool.sh -r $REGISTRY -t $IMAGE_TAG -p ./kubernetes/dockerfiles/spark/bindings/python/Dockerfile -X build
-        
+        docker buildx create --name=container --driver=docker-container --use --bootstrap
+        ./bin/docker-image-tool.sh -r $REGISTRY -t $IMAGE_TAG -p ./kubernetes/dockerfiles/spark/bindings/python/Dockerfile -X build        
 env:
   IMAGE_PATH : "spark-3.4.2-bin-hadoop3"
