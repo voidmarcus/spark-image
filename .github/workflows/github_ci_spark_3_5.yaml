@@ -26,6 +26,7 @@ jobs:
       run: |
         cd $IMAGE_PATH
         docker buildx create --name=container --driver=docker-container --use --bootstrap
+        chmod +x ./bin/docker-image-tool.sh
         ./bin/docker-image-tool.sh -r $REGISTRY -t $IMAGE_TAG -p ./kubernetes/dockerfiles/spark/bindings/python/Dockerfile -X build        
 env:
   IMAGE_PATH : "spark-3.5.0-bin-hadoop3"
