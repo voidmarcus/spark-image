@@ -25,8 +25,7 @@ jobs:
         IMAGE_TAG: v3.5.0-hadoop3
       run: |
         cd $IMAGE_PATH
-        docker buildx create --name=container --driver=docker-container --use --bootstrap
-        chmod +x ./bin/docker-image-tool.sh
-        ./bin/docker-image-tool.sh -r $REGISTRY -t $IMAGE_TAG -p ./kubernetes/dockerfiles/spark/bindings/python/Dockerfile -X build        
+        ./bin/docker-image-tool.sh -r $REGISTRY -t $IMAGE_TAG -p ./kubernetes/dockerfiles/spark/bindings/python/Dockerfile build
+        ./bin/docker-image-tool.sh -r $REGISTRY -t $IMAGE_TAG push 
 env:
   IMAGE_PATH : "spark-3.5.0-bin-hadoop3"
